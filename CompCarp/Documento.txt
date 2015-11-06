@@ -1,0 +1,23 @@
+TK_programa program
+TK_Nome_prog  
+TK_fecha_comando ;
+TK_principal main
+TK_inicio begin
+TK_fim_prog endp
+TK_inicio_bloco {
+TK_final_bloco }
+TK_tipo_variavel 
+TK_Identificador  
+TK_comando_escreva write
+TK_comando_leia read
+TK_comando_for for
+TK_comando_if if
+TK_comando_elif elif
+TK_comando_else else
+TK_comando_while while
+TK_string string
+TK_abre_parenteses (
+TK_fecha_parenteses ) 
+TK_Atribuacao :=
+TK_Operador  
+TK_Numero 

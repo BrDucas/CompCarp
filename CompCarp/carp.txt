@@ -1,0 +1,23 @@
+program: Hello;
+
+	main
+
+		begin
+
+			int age;
+
+			int sum;
+	
+			read (age);
+	
+			sum :=age+5;
+	
+			write ("Hello Mundão");
+	
+			write (age);
+	
+			write (sum);
+	
+		endp;
+	
+	end;
