@@ -14,7 +14,7 @@ public class main {
 		// System.out.println(analisador.getListaId());
 		String caminho = l.getCaminho();
 		GeradorArq ga = new GeradorArq(caminho);
-		System.out.println(analisador.getLt().getLista_tk());
+		//System.out.println(analisador.getLt().getLista_tk());
 		ga.Gravar(analisador.getLt().getLista_tk());
 	}
 }
