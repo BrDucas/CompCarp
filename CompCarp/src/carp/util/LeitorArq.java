@@ -2,9 +2,11 @@ package carp.util;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import javax.swing.JFileChooser;
 
@@ -46,15 +48,55 @@ public class LeitorArq {
 		this.total = total;
 	}
 
-	public void abrirArq() {
+	public void abrirArq(String delimiter) {
 		FileReader f = null;
 		Scanner scanner = null;
-		
+
 		JFileChooser fc = new JFileChooser();
 		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		if (fc.showOpenDialog(fc) == JFileChooser.APPROVE_OPTION) {
 			nomeArq = fc.getSelectedFile().getAbsolutePath();
-			caminho  = fc.getSelectedFile().getParent();
+			caminho = fc.getSelectedFile().getParent();
+		}
+
+		try {
+			f = new FileReader(nomeArq);
+			scanner = new Scanner(f);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		scanner.useDelimiter(delimiter);
+		while (scanner.hasNext()) {
+			String str = scanner.next();
+			str = str.toUpperCase();
+			// lista.add(str);
+			total += str + " ";
+		}
+		corrigir(total);
+		//System.out.println(total);
+	}
+
+	public void corrigir(String texto) {
+		String textoCorrigido = new String();
+
+		StringTokenizer token = new StringTokenizer(texto, " ");
+		while (token.hasMoreTokens()) {
+			textoCorrigido+=(token.nextToken() + " ");
+		}
+		String []aux = textoCorrigido.split(" ");
+		lista = new LinkedList<>(Arrays.asList(aux));
+	}
+
+	public void abrirArq() {
+		FileReader f = null;
+		Scanner scanner = null;
+
+		JFileChooser fc = new JFileChooser();
+		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		if (fc.showOpenDialog(fc) == JFileChooser.APPROVE_OPTION) {
+			nomeArq = fc.getSelectedFile().getAbsolutePath();
+			caminho = fc.getSelectedFile().getParent();
 		}
 
 		try {
@@ -72,6 +114,7 @@ public class LeitorArq {
 				str = str.replace("\n", "");
 				str = str.replace("\t", "");
 				lista.add(str);
+
 			}
 		}
 
