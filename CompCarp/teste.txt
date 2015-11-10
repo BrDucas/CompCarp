@@ -1,0 +1,10 @@
+program teste;
+	main
+		begin
+			real money;
+			write("digite seu salario mensal"); 
+			><> este é um comentário
+			read(money);
+			money = money * 12.0;
+			write(money);
+		endp;

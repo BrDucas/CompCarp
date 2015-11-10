@@ -1,0 +1,15 @@
+program teste;
+	main
+		begin
+			int age;
+			char c;
+			write("digite seu ano de nascimento"); ><> qualquer comentário
+			><> este é um comentário
+			read(age);
+			write ("voce já fez aniversario esse ano? digite [s] ou [n]");
+			read(c);
+			if(c="s")
+				write(2015-age);
+			else
+				write(2015-age-1);
+		endp;

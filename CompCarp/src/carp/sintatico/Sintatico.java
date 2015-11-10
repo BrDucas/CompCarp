@@ -1,14 +1,26 @@
 package carp.sintatico;
 
 import java.util.List;
+import java.util.Stack;
 
 import carp.modelo.Token;
-import carp.pilha.Pilha;
 
 public class Sintatico {
-	Pilha p = new Pilha();
+	private Stack<String> pilha = new Stack<>();
 	
-	public void abrirTokens(List<Token> list){
+	public Sintatico() {
+		this.pilha.push("$");
+	}
+
+	public Stack<String> getPilha() {
+		return pilha;
+	}
+
+	public void setPilha(Stack<String> pilha) {
+		this.pilha = pilha;
+	}
+
+	public void abrirTokens(List<Token> list) {
 		System.out.println(list);
 	}
 }

@@ -1,6 +1,5 @@
 package carp.tabela;
 
-import carp.main.AnaLex;
 import carp.modelo.Token;
 import java.util.*;
 
